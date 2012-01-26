@@ -22,10 +22,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="probabilities.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="probabilities.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/probabilities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="7" selection-start="3049" selection-end="3049" vertical-scroll-proportion="3.1954887">
+            <state line="85" column="7" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="66" selection-start="294" selection-end="294" vertical-scroll-proportion="0.18203883">
               <folding />
             </state>
           </provider>
@@ -47,6 +56,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/probabilities.py" />
+        <option value="$PROJECT_DIR$/README.txt" />
       </list>
     </option>
   </component>
@@ -259,7 +269,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/probabilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="7" selection-start="3049" selection-end="3049" vertical-scroll-proportion="3.1954887">
+        <state line="85" column="7" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="66" selection-start="294" selection-end="294" vertical-scroll-proportion="0.18203883">
           <folding />
         </state>
       </provider>
