@@ -82,6 +82,18 @@ def dealer_cards_for_bust(total):
     return sum
 
 
+def prob_win(player, dealer):
+    difference = player - dealer
+    sum = 0
+    for i in range(10):                 #will add all the cards that have a value less than the difference, therefore the player wins
+        if i + 1 < difference:            
+            sum += shoe[i]
+    prob = (sum / cards_left) + prob_dealer_bust(dealer)
+    if prob <= 1:
+        return prob
+    return 1
+
+
 def count():
     """Calculates the count used in card counting.
 
@@ -128,6 +140,7 @@ while input("Would you like to continue? 1/0 "):
     else:
         print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
     print "The dealer is showing ", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), " probability of busting."
+    print "If you do nothing, your probability of winning is: ", prob_win(player_total, dealer)
     if prob_player_bust(player_total) >= 1:
         print "You must stand"
     while input("Did you hit? 1/0 "):
@@ -141,9 +154,10 @@ while input("Would you like to continue? 1/0 "):
                 player_total += 10
         if soft:
             print "You currently have ", player_total, ". Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
-    else:
-        print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
+        else:
+            print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
         print "The dealer is showing ", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), " probability of busting."
+        print "If you do nothing, your probability of winning is: ", prob_win(player_total, dealer)
         if prob_player_bust(player_total) >= 1:
             print "You must stand"
 
@@ -161,3 +175,4 @@ while input("Would you like to continue? 1/0 "):
 
 
 
+#TODO calculate probability of winning.
