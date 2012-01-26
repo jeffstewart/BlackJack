@@ -94,10 +94,10 @@ decks = 1
 #shoe contains a list holding all the cards in order of denomination starting at ace ending with 10
 shoe = [4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 16.0 * decks,]
 cards_left = 52.0 * decks
-soft = False
 
 print "Play blackjack with ", decks, " decks of cards"
 while input("Would you like to continue? 1/0 "):
+    soft = False
     print "The count is: ", count(), " bet accordingly.\nGood luck!"
 
 
