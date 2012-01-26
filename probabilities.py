@@ -1,6 +1,7 @@
 #Jeff Stewart
 #1/25/12
 #Jan 047
+
 import sys
 
 
@@ -15,8 +16,6 @@ def player_cards_for_hit (total):
         if i + 1 <= max_val:            #if less than or equal to max value that will not result in a bust
             sum += shoe[i]
     return sum
-
-
 
 
 def remove_card (card):
@@ -34,6 +33,10 @@ def player_cards_for_bust(total):
 
 
 def prob_player_bust(total):
+    """Calculates the prob that a player will bust on the next card
+
+    returns a number between 1 and 0
+    """
     return player_cards_for_bust(total) / cards_left
 
 
@@ -59,6 +62,11 @@ def prob_dealer_bust(showing):
 
 
 def dealer_cards_for_bust(total):
+    """Calculates the number of cards that will make a dealer bust on the next hit.
+    Used multiple times to calculate for each possible card the dealer may have.
+
+    Returns an integer
+    """
     sum = 0
     if total >= 17: #handles if dealer must stand
         return 0
@@ -72,6 +80,10 @@ def dealer_cards_for_bust(total):
 
 
 def count():
+    """Calculates the count used in card counting.
+
+    Returns an integer.
+    """
     return shoe[9]+shoe[0]-shoe[1]-shoe[2]-shoe[3]-shoe[4]-shoe[5]
 
 
