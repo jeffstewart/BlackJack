@@ -23,19 +23,22 @@ def remove_card (card):
 
     Returns None.
     """
-
     shoe[card - 1] -= 1 #shoe.index(card - 1) - 1
     return
 
 
 def player_cards_for_bust(total):
+    """Calculates the number of cards that will cause a player to bust on the next move.
+
+    Returns an integer
+    """
     return cards_left - player_cards_for_hit(total)
 
 
 def prob_player_bust(total):
     """Calculates the prob that a player will bust on the next card
 
-    returns a number between 1 and 0
+    Returns a number between 1 and 0
     """
     return player_cards_for_bust(total) / cards_left
 
@@ -86,11 +89,12 @@ def count():
     """
     return shoe[9]+shoe[0]-shoe[1]-shoe[2]-shoe[3]-shoe[4]-shoe[5]
 
-
+#decks can be changed to accommodate different size card shoes.
 decks = 1
 #shoe contains a list holding all the cards in order of denomination starting at ace ending with 10
 shoe = [4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 16.0 * decks,]
 cards_left = 52.0 * decks
+soft = False
 
 print "Play blackjack with ", decks, " decks of cards"
 while input("Would you like to continue? 1/0 "):
@@ -109,24 +113,35 @@ while input("Would you like to continue? 1/0 "):
 
     player_total = card1 + card2
     if card1 == 1:
+        soft = True
         player_total += 10
     else:
         if card2 == 1:
+            soft = True
             player_total += 10
 
     if player_total == 21:
         print "Winner Winner, Chicken Dinner!"
 
-    print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
+    if soft:
+        print "You currently have ", player_total, ". Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
+    else:
+        print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
     print "The dealer is showing ", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), " probability of busting."
     if prob_player_bust(player_total) >= 1:
         print "You must stand"
     while input("Did you hit? 1/0 "):
         new_card = input("What card did you receive? (1 for Ace) ")
         player_total += new_card
+        if player_total < 21 and soft:
+            player_total -= 10
         if new_card == 1:
             if player_total <= 11:
+                soft = True
                 player_total += 10
+        if soft:
+            print "You currently have ", player_total, ". Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
+    else:
         print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
         print "The dealer is showing ", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), " probability of busting."
         if prob_player_bust(player_total) >= 1:
