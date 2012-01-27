@@ -165,7 +165,7 @@ while input("Would you like to continue? 1/0 "):
         else:
             print "You currently have", player_total, "If you hit you have a ", prob_player_bust(player_total), "probability of busting."
         print "The dealer is showing", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), "probability of busting."
-        print "If you do nothing, your probability of winning is:", prob_win(player_total, dealer)
+        print "If you do nothing, your probability of winning is:", prob_win(player_total, dealer, Dsoft)
         if prob_player_bust(player_total) >= 1:
             print "You must stand"
 
