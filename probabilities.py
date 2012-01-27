@@ -80,7 +80,7 @@ def dealer_cards_for_bust(total):
     return sum
 
 
-def prob_win(player, dealer):
+def prob_win(player, dealer, Dsoft):
     """Calculates the probability that the player will win against the dealer.
 
     Returns an number between 0 and 1.
@@ -141,8 +141,14 @@ while input("Would you like to continue? 1/0 "):
         print "You currently have", player_total, "Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
     else:
         print "You currently have", player_total, "If you hit you have a ", prob_player_bust(player_total), "probability of busting."
-    print "The dealer is showing", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), "probability of busting."
-    print "If you do nothing, your probability of winning is:", prob_win(player_total, dealer)
+    Dsoft = False
+    if dealer == 1:
+        Dsoft = True
+        dealer += 10
+        print "The dealer is showing", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer-10), "probability of busting."
+    else:
+        print "The dealer is showing", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), "probability of busting."
+    print "If you do nothing, your probability of winning is:", prob_win(player_total, dealer, Dsoft)
     if prob_player_bust(player_total) >= 1:
         print "You must stand"
     while input("Did you hit? 1/0 "):
@@ -173,4 +179,4 @@ while input("Would you like to continue? 1/0 "):
         dealer_total += new_card
         if new_card == 1:
             if dealer_total <= 11:
-                dealer_total += 11
+                dealer_total += 10

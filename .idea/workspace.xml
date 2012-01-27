@@ -22,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="probabilities.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="probabilities.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/probabilities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="7" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.0">
+            <state line="89" column="42" selection-start="3315" selection-end="3315" vertical-scroll-proportion="0.2857143">
               <folding />
             </state>
           </provider>
@@ -40,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="32" selection-start="672" selection-end="672" vertical-scroll-proportion="0.4368932">
+            <state line="12" column="32" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -284,16 +284,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/probabilities.py">
+    <entry file="file://$PROJECT_DIR$/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="7" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.0">
+        <state line="12" column="32" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
+    <entry file="file://$PROJECT_DIR$/probabilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="32" selection-start="672" selection-end="672" vertical-scroll-proportion="0.4368932">
+        <state line="89" column="42" selection-start="3315" selection-end="3315" vertical-scroll-proportion="0.2857143">
           <folding />
         </state>
       </provider>
