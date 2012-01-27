@@ -25,7 +25,7 @@
       <file leaf-file-name="probabilities.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/probabilities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="12" selection-start="3459" selection-end="3459" vertical-scroll-proportion="0.0">
+            <state line="86" column="7" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -43,7 +43,7 @@
       <file leaf-file-name="README.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="59" selection-start="519" selection-end="519" vertical-scroll-proportion="0.3276699">
+            <state line="12" column="32" selection-start="672" selection-end="672" vertical-scroll-proportion="0.4368932">
               <folding />
             </state>
           </provider>
@@ -286,14 +286,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/probabilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="12" selection-start="3459" selection-end="3459" vertical-scroll-proportion="0.0">
+        <state line="86" column="7" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="59" selection-start="519" selection-end="519" vertical-scroll-proportion="0.3276699">
+        <state line="12" column="32" selection-start="672" selection-end="672" vertical-scroll-proportion="0.4368932">
           <folding />
         </state>
       </provider>

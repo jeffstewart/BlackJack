@@ -2,8 +2,6 @@
 #1/25/12
 #Jan 047
 
-import sys
-
 
 def player_cards_for_hit (total):
     """Counts the number of cards that are possible for a player to accept from hitting without causing the player to bust.
@@ -71,21 +69,25 @@ def dealer_cards_for_bust(total):
     Returns an integer
     """
     sum = 0
-    if total >= 17: #handles if dealer must stand
+    if total >= 17: # handles if dealer must stand
         return 0
-    if total <= 11: #handles if dealer cannot bust
+    if total <= 11: # handles if dealer cannot bust
         return 0
     lowest_card_for_bust = 22 - total
-    for i in range(10):                 #will add all the cards that have a value greater than the lowest for a bust
+    for i in range(10):                 # will add all the cards that have a value greater than the lowest for a bust
         if i + 1 >= lowest_card_for_bust:
             sum +=  shoe[i]
     return sum
 
 
 def prob_win(player, dealer):
+    """Calculates the probability that the player will win against the dealer.
+
+    Returns an number between 0 and 1.
+    """
     difference = player - dealer
     sum = 0
-    for i in range(10):                 #will add all the cards that have a value less than the difference, therefore the player wins
+    for i in range(10):                 # will add all the cards that have a value less than the difference, therefore the player wins
         if i + 1 < difference:            
             sum += shoe[i]
     prob = (sum / cards_left) + prob_dealer_bust(dealer)
@@ -101,25 +103,25 @@ def count():
     """
     return shoe[9]+shoe[0]-shoe[1]-shoe[2]-shoe[3]-shoe[4]-shoe[5]
 
-#decks can be changed to accommodate different size card shoes.
+# decks can be changed to accommodate different size card shoes.
 decks = 1
-#shoe contains a list holding all the cards in order of denomination starting at ace ending with 10
+# shoe contains a list holding all the cards in order of denomination starting at ace ending with 10
 shoe = [4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 4.0 * decks, 16.0 * decks,]
 cards_left = 52.0 * decks
 
-print "Play blackjack with ", decks, " decks of cards"
+print "Play blackjack with", decks, "decks of cards"
 while input("Would you like to continue? 1/0 "):
     soft = False
-    print "The count is: ", count(), " bet accordingly.\nGood luck!"
+    print "The count is:", count(), "bet accordingly.\nGood luck!"
 
 
-    card1 = input("What is the first card you were delt? (Enter 1 for an Ace) ")
+    card1 = input("What is the first card you were delt? (Enter 1 for an Ace)")
     remove_card(card1)
     cards_left -= 1
-    card2 = input("What is the second card you were delt? (Enter 1 for an Ace) ")
+    card2 = input("What is the second card you were delt? (Enter 1 for an Ace)")
     remove_card(card2)
     cards_left -= 1
-    dealer = input("What card is the dealer showing? ")
+    dealer = input("What card is the dealer showing?")
     remove_card(dealer)
     cards_left -= 1
 
@@ -136,11 +138,11 @@ while input("Would you like to continue? 1/0 "):
         print "Winner Winner, Chicken Dinner!"
 
     if soft:
-        print "You currently have ", player_total, ". Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
+        print "You currently have", player_total, "Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
     else:
-        print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
-    print "The dealer is showing ", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), " probability of busting."
-    print "If you do nothing, your probability of winning is: ", prob_win(player_total, dealer)
+        print "You currently have", player_total, "If you hit you have a ", prob_player_bust(player_total), "probability of busting."
+    print "The dealer is showing", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), "probability of busting."
+    print "If you do nothing, your probability of winning is:", prob_win(player_total, dealer)
     if prob_player_bust(player_total) >= 1:
         print "You must stand"
     while input("Did you hit? 1/0 "):
@@ -153,26 +155,22 @@ while input("Would you like to continue? 1/0 "):
                 soft = True
                 player_total += 10
         if soft:
-            print "You currently have ", player_total, ". Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
+            print "You currently have", player_total, "Because you have an ace, your probability of busting if you hit is: ", prob_player_bust(player_total-10)
         else:
-            print "You currently have ", player_total, "If you hit you have a ", prob_player_bust(player_total), " probability of busting."
-        print "The dealer is showing ", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), " probability of busting."
-        print "If you do nothing, your probability of winning is: ", prob_win(player_total, dealer)
+            print "You currently have", player_total, "If you hit you have a ", prob_player_bust(player_total), "probability of busting."
+        print "The dealer is showing", dealer, "If you do nothing, he has a ", prob_dealer_bust(dealer), "probability of busting."
+        print "If you do nothing, your probability of winning is:", prob_win(player_total, dealer)
         if prob_player_bust(player_total) >= 1:
             print "You must stand"
 
 
-    second_dealer = input("What was the dealer's other card? (1 for Ace) ")
+    second_dealer = input("What was the dealer's other card? (1 for Ace)")
     remove_card(second_dealer)
     dealer_total = dealer + second_dealer
     while dealer_total < 17:
-        new_card = input("What card did the Dealer receive when he hit?? (1 for Ace) ")
+        new_card = input("What card did the Dealer receive when he hit?? (1 for Ace)")
         remove_card(new_card)
         dealer_total += new_card
         if new_card == 1:
             if dealer_total <= 11:
                 dealer_total += 11
-
-
-
-#TODO calculate probability of winning.
